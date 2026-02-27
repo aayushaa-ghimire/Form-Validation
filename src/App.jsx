@@ -19,7 +19,7 @@ const validateName = (name) =>{
 
 const validateEmail = (email) =>{
   {
-    const emailPattern = /^[\w-.\]+@([\w-]+\.)+\.[\w-]{2,4}$/;
+    const emailPattern = /^[\w-.\]+@[\w-.\]+\.[\w-]{2,4}$/i;
     if(!emailPattern.test(email)){
       return 'Invalid format';
     }
@@ -63,6 +63,7 @@ function handleSubmit(e){
                     value={name} 
                     onChange={handleNameChange} 
                   required/>
+                  {setNameErrorMessage &&<span>{setNameErrorMessage}</span>}
                 </div>
                 <div className='email'>
                   <label htmlFor="email">Email:</label>
@@ -73,6 +74,7 @@ function handleSubmit(e){
                     onChange={handleEmailChange} 
                     minLength={10} 
                     required/>
+                    {setEmailErrorMessage &&<span>{setEmailErrorMessage}</span>}
                   </div>
               </div>
               <div className="cfromBottom">
