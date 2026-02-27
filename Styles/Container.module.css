@@ -1,9 +1,3 @@
-
-*{
-    padding: 0;
-    margin: 0;
-}
-
 .formContainer{
     display: flex;
     background-color: rgba(0, 0, 0, 0.877);
@@ -21,6 +15,8 @@
     align-items: center;
     font-size: 1.4em;
 }
+
+
 .cformMid{
     display: flex;
 }
@@ -29,3 +25,4 @@
     display: flex;
     justify-content: center;
 }
+

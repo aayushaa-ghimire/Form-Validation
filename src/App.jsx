@@ -1,8 +1,8 @@
 import './App.css'
 import { useState } from 'react'
-// import setStatus from '../Components/SetStatus';
-// import Success from '../Components/Success';
-// import Form from '../Components/Form';
+import buttonStyles from '../Styles/Button.module.css';
+import inputStyles from '../Styles/Input.module.css';
+import containerStyles from '../Styles/Container.module.css';
 function App() 
 {
   const[name, setName] = useState("");
@@ -54,13 +54,14 @@ function handleSubmit(e){
   }
    return (
      <>
-      <div className="formContainer">
+      <div className={styles.formContainer}>
           <form onSubmit={handleSubmit}>
-              <div className="cformTop">
-                <div className='name'>
+              <div className={styles.cformTop}>
+                <div>
                   <label htmlFor="name">Name:</label>
                   <input 
                     type="text" 
+                    className={styles.input}
                     placeholder="Enter your name" 
                     name="name" 
                     value={name} 
@@ -68,10 +69,11 @@ function handleSubmit(e){
                   required/>
                   {setNameErrorMessage &&<span>{setNameErrorMessage}</span>}
                 </div>
-                <div className='email'>
+                <div >
                   <label htmlFor="email">Email:</label>
                   <input 
                     type="text" 
+                    className={styles.input}
                     placeholder="Enter Your email" 
                     value={email} 
                     onChange={handleEmailChange} 
@@ -80,8 +82,12 @@ function handleSubmit(e){
                     {setEmailErrorMessage &&<span>{setEmailErrorMessage}</span>}
                   </div>
               </div>
-              <div className="cfromBottom">
-                  <button type='submit'>Submit</button>
+              <div className={cfromBottom}>
+                  <button type='submit' className={styles.button}>Submit</button>
+                  <button className={styles.button}>Btn 2</button>
+                  <button className={styles.button}>Btn 3</button>
+                  <button className={styles.button}>Btn 4</button>
+                  <button className={styles.button}>Btn 5</button>
               </div>
             </form>
         </div>
