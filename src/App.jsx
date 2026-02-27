@@ -6,25 +6,28 @@ import { useState } from 'react'
 function App() 
 {
   const[name, setName] = useState("");
+  const[nameErrorMessage, setNameErrorMessage] = useState(null);
   const[email, setEmail] = useState("");
-  const[nameErrorHandling, setNameErrorMessage] = useState(null);
-  const[emailErrorHandling, setEmailErrorMessage] = useState(null);
+  const[emailErrorMessage, setEmailErrorMessage] = useState(null);
 
 const validateName = (name) =>{
   if(name.trim() === ""){ 
     return 'Name is required!';
   }
-  return null;
+  console.log(name)
+  return 'Name added';
 }
 
 const validateEmail = (email) =>{
   {
     const emailPattern = /^[\w-.\]+@[\w-.\]+\.[\w-]{2,4}$/i;
     if(!emailPattern.test(email)){
+      console.log(email);
       return 'Invalid format';
     }
+    console.log(`${email} email2`)
   }
- return null;
+ return'Email added';
 }
 
 function handleNameChange(e){
@@ -52,7 +55,7 @@ function handleSubmit(e){
    return (
      <>
       <div className="formContainer">
-          <form onClick={handleSubmit}>
+          <form onSubmit={handleSubmit}>
               <div className="cformTop">
                 <div className='name'>
                   <label htmlFor="name">Name:</label>
@@ -78,7 +81,7 @@ function handleSubmit(e){
                   </div>
               </div>
               <div className="cfromBottom">
-                  <button type="submit">Submit</button>
+                  <button type='submit'>Submit</button>
               </div>
             </form>
         </div>
