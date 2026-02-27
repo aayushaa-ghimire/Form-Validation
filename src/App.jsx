@@ -17,12 +17,15 @@ const validateName = (name) =>{
   return null;
 }
 
-// const validateEmail = (email) =>{
-//   {
-
-//   }
-//  return null;
-// }
+const validateEmail = (email) =>{
+  {
+    const emailPattern = /^[\w-.\]+@([\w-]+\.)+\.[\w-]{2,4}$/;
+    if(!emailPattern.test(email)){
+      return 'Invalid format';
+    }
+  }
+ return null;
+}
 
 function handleNameChange(e){
   setName(e.target.value);
@@ -51,6 +54,7 @@ function handleSubmit(e){
       <div className="formContainer">
           <form onClick={handleSubmit}>
               <div className="cformTop">
+                <div className='name'>
                   <label htmlFor="name">Name:</label>
                   <input 
                     type="text" 
@@ -59,8 +63,8 @@ function handleSubmit(e){
                     value={name} 
                     onChange={handleNameChange} 
                   required/>
-              </div>
-              <div className="cformMid">
+                </div>
+                <div className='email'>
                   <label htmlFor="email">Email:</label>
                   <input 
                     type="text" 
@@ -68,7 +72,8 @@ function handleSubmit(e){
                     value={email} 
                     onChange={handleEmailChange} 
                     minLength={10} 
-                  required/>
+                    required/>
+                  </div>
               </div>
               <div className="cfromBottom">
                   <button type="submit">Submit</button>

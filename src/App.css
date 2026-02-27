@@ -1,0 +1,49 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.formContainer{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.877);
+    width:  40vw;
+    padding: 3vw;
+    align-items: center;
+    color: white;
+    gap: 12vw;
+}
+
+.cformTop{
+    display: flex;
+    gap: 0.8vw;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+}
+
+.name input{
+    padding: 0.8vw;
+}
+
+.email input{
+    padding: 0.8vw;
+}
+
+.cformMid{
+    display: flex;
+}
+
+.cfromBottom{
+    display: flex;
+    justify-content: center;
+}
+.cfromBottom button{
+    padding: 0.7vw;
+    display: flex;
+    margin-top: 1.2vw;
+    font-weight: bold;
+    
+    /* justify-content: center; */
+    /* align-self: center; */
+}
