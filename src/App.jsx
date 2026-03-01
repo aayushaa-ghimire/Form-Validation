@@ -1,8 +1,8 @@
 import './App.css'
 import { useState } from 'react'
-import buttonStyles from '../Styles/Button.module.css';
-import inputStyles from '../Styles/Input.module.css';
-import containerStyles from '../Styles/Container.module.css';
+import ButtonStyles from '../Styles/Button.module.css';
+import InputStyles from '../Styles/Input.module.css';
+import ContainerStyles from '../Styles/Container.module.css';
 function App() 
 {
   const[name, setName] = useState("");
@@ -54,14 +54,14 @@ function handleSubmit(e){
   }
    return (
      <>
-      <div className={styles.formContainer}>
+      <div className={ContainerStyles.formContainer}>
           <form onSubmit={handleSubmit}>
-              <div className={styles.cformTop}>
+              <div className={ContainerStyles.cformTop}>
                 <div>
                   <label htmlFor="name">Name:</label>
                   <input 
                     type="text" 
-                    className={styles.input}
+                    className={InputStyles.input}
                     placeholder="Enter your name" 
                     name="name" 
                     value={name} 
@@ -73,7 +73,7 @@ function handleSubmit(e){
                   <label htmlFor="email">Email:</label>
                   <input 
                     type="text" 
-                    className={styles.input}
+                    className={InputStyles.input}
                     placeholder="Enter Your email" 
                     value={email} 
                     onChange={handleEmailChange} 
@@ -82,12 +82,12 @@ function handleSubmit(e){
                     {setEmailErrorMessage &&<span>{setEmailErrorMessage}</span>}
                   </div>
               </div>
-              <div className={cfromBottom}>
-                  <button type='submit' className={styles.button}>Submit</button>
-                  <button className={styles.button}>Btn 2</button>
-                  <button className={styles.button}>Btn 3</button>
-                  <button className={styles.button}>Btn 4</button>
-                  <button className={styles.button}>Btn 5</button>
+              <div className={ContainerStyles.cfromBottom}>
+                  <button type='submit' className={ButtonStyles.button}>Submit</button>
+                  <button className={ButtonStyles.button}>Btn 2</button>
+                  <button className={ButtonStyles.button}>Btn 3</button>
+                  <button className={ButtonStyles.button}>Btn 4</button>
+                  <button className={ButtonStyles.button}>Btn 5</button>
               </div>
             </form>
         </div>
